@@ -15,7 +15,7 @@
 I have also tried replacing the `fetch` logic with `eval('require('path/to/dynamic-locale.json'))`:
 
 ```js
-static async getInitialProps({ req, query }) {
+static getInitialProps({ req, query }) {
   const locale = query && query.locale || 'en'
   const data = eval(`require('../static/locales/${locale}.json')`)
   return { data }

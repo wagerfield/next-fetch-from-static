@@ -23,9 +23,9 @@ class Index extends Component {
     }
   }
 
-  // static async getInitialProps({ req, query }) {
+  // static getInitialProps({ req, query }) {
   //   const locale = query && query.locale || 'en'
-  //   const data = await eval(`require('../static/locales/${locale}.json')`)
+  //   const data = eval(`require('../static/locales/${locale}.json')`)
   //   return { data }
   // }
 
