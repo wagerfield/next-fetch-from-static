@@ -1,0 +1,19 @@
+{
+  "name": "next-fetch-from-static",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next",
+    "build": "next build && next export",
+    "start": "serve out"
+  },
+  "dependencies": {
+    "isomorphic-fetch": "^2.2.1",
+    "next": "beta",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  },
+  "devDependencies": {
+    "serve": "^6.0.3"
+  }
+}
