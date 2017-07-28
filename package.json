@@ -8,7 +8,6 @@
     "start": "serve out"
   },
   "dependencies": {
-    "isomorphic-fetch": "^2.2.1",
     "next": "beta",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
