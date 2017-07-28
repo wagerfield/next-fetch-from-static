@@ -4,8 +4,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "next",
-    "build": "next build && next export",
-    "start": "serve out"
+    "build": "next build && next export -o .dist",
+    "serve": "serve .dist"
   },
   "dependencies": {
     "next": "beta",
