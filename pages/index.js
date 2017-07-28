@@ -1,33 +1,19 @@
 import { Component } from 'react'
+import { resolve } from 'path'
 import fetch from 'isomorphic-fetch'
+
+const locales = {
+  en: import('../static/locales/en.json'),
+  fr: import('../static/locales/fr.json')
+}
 
 class Index extends Component {
 
-  static async getInitialProps({ req, query }) {
-    const locale = query && query.locale || 'en'
-    const host = req && req.host && req.host.headers || 'localhost:3000'
-    const baseURL = `http://${host}/static/locales/`
-    const dataURL = `${baseURL}${locale}.json`
-    const response = await fetch(dataURL)
-    if (response.status === 200) {
-      const data = await response.json()
-      console.log('getInitialProps')
-      console.log('- host:', host)
-      console.log('- locale:', locale)
-      console.log('- baseURL:', baseURL)
-      console.log('- dataURL:', dataURL)
-      console.log('- data:', data)
-      return { data }
-    } else {
-      throw new Error(`${respose.status} ${dataURL}`)
-    }
+  static async getInitialProps({ query }) {
+    const { locale = 'en' } = query
+    const data = await locales[locale]
+    return { data }
   }
-
-  // static getInitialProps({ req, query }) {
-  //   const locale = query && query.locale || 'en'
-  //   const data = eval(`require('../static/locales/${locale}.json')`)
-  //   return { data }
-  // }
 
   render() {
     return <h1>{this.props.data.hello}</h1>
