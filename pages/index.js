@@ -1,6 +1,4 @@
 import { Component } from 'react'
-import { resolve } from 'path'
-import fetch from 'isomorphic-fetch'
 
 const locales = {
   en: import('../static/locales/en.json'),
